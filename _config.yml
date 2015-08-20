@@ -1,0 +1,10 @@
+title: Big Wild Wings
+description: 'Big Wild Wings'
+
+# url: "http://yourdomain.com"
+
+
+# Build settings
+markdown: kramdown
+paginate: 3
+paginate_path: "news/page:num/"

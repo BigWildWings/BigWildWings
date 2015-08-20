@@ -1,0 +1,237 @@
+html, body {height:100%; width:100%;}
+
+h1 {
+	font-size:40px;
+	letter-spacing: .2em;
+	text-transform:uppercase;
+}
+
+.main {
+	height:100%;
+	width:100%;
+
+	.hero {
+		background: $dark-gray;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		height: 100%;
+		// display: inline-block;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		.hero-inner {
+			@include outer-container;
+			.hero-images {
+				background:url('/img/BWW.png') center center no-repeat;
+				background-size:contain;
+				width:100%;	
+				min-width:80%;
+				height: 60vh;
+    			width: 60vw;
+				.bww {
+					width:100%;
+				}
+			}
+
+			div {
+				margin-top:2em;
+				text-align:center;
+				p {
+					margin:0;
+				}
+				.hero-headline {
+					width:100%;
+					font-size:20px;
+					text-transform:uppercase;
+					font-weight:bold;
+					letter-spacing:.2em;					
+				}
+				.album-title {
+					font-family: $eb-garamond;
+					font-size:32px;
+					width:100%;
+				}
+				.buttons {
+					.itunes {
+						margin-right:10px;
+						&:before {
+							content:'\f179';
+						}
+
+					}
+					.spotify {
+						margin-left:10px;
+						&:before {
+							content:'\f1bc';
+						}
+					}
+					a {
+						span {
+							font-family:$eb-garamond;
+							font-size:18px;
+							&:before {
+								font-family:'FontAwesome';
+								margin-right:4px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	video#bgvid {
+	    position: absolute;
+	    top: 0;
+	    bottom: 0;
+	    left: 0;
+	    right: 0;
+		min-width: 100%;
+		min-height: 100%;
+		width: auto;
+		height: auto;
+		z-index: -100;
+		//-webkit-transform: translateX(-50%) translateY(-50%);
+		//transform: translateX(-50%) translateY(-50%);
+		background: url(/img/Lyndsi-SomdayDreams.jpg) no-repeat;
+		background-size: cover;
+		z-index:-10;
+	}
+
+	.video {
+		height:100%;
+		width:100%;
+		.video-overlay {
+			height:100%;
+			width:100%;
+			background: rgba(0, 0, 0, 0.6);
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			text-align:center;
+			.play-this {
+				.play-button {
+					&:before {
+						font-family:'FontAwesome';
+						content:'\f04b';
+						font-size:86px;
+						cursor:pointer;
+					}
+				}
+				h2 {
+
+				}
+			}
+		}
+	}
+
+	.shows {
+		background: $dark-gray center center;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		height: 100%;
+		// display: inline-block;
+		width: 100%;
+		text-align:center;
+		display:flex;
+		flex-direction: column;
+		justify-content: center;
+		padding:2%;
+		table.schedule {
+			max-width:660px;
+			font-family:$eb-garamond;
+			font-size:18px;
+			margin:0 auto;
+
+			tr {
+				&:first-child {
+					border-top: 1px solid $light-gray;
+				}
+				border-bottom: 1px solid $light-gray;
+
+				td {
+					border:none;
+					text-align:left;
+					width:25%;
+					padding:0.6em 0.8em;
+				}
+			}
+			tr.past {
+				text-decoration: line-through;
+			}
+		}
+	}
+	.follow {
+		height:100%;
+		width:100%;
+
+		.social {
+			text-align:center;
+			display:flex;
+			flex-direction: column;
+			justify-content: center;
+			height:80%;
+			background: url(/img/follow-bg.jpg) $dark-gray top center no-repeat;
+			background-size:cover;
+			h1 {
+				color:#ffffff;
+			}
+			.social-links {
+				.fa:before, .ig:before, .yt:before, .sc:before {
+					font-family:'FontAwesome';
+					color:#ffffff;
+					font-size:60px;
+
+				}
+				.fa:before {
+					content:'\f09a';
+					margin-right:60px;
+				}
+				.ig:before {
+					content:'\f16d';
+					margin-right:60px;
+				}
+				.yt:before {
+					content:'\f167';
+					margin-right:60px;
+				}
+				.sc:before {
+					content:'\f1be';
+				}
+			}
+		}
+		.footer {
+			height:20%;
+			position:relative;
+			bottom:0;
+			background:$dark-gray;
+			text-align:center;
+			display:flex;
+			flex-direction: column;
+			justify-content: center;
+
+			ul.footer-links {
+				font-weight:bold;
+				text-transform: uppercase;
+				margin-bottom:20px;
+				li {
+					font-size:20px;
+					display:inline-block;
+					margin-right:30px;
+					&:last-child {
+						@include omega;
+					}
+				}
+			}
+			.credit {
+				font-family:$eb-garamond;
+				font-size:20px;
+			}
+		}
+	}
+}
