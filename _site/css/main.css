@@ -501,7 +501,8 @@ header.navigation {
 
 html, body {
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  overflow: hidden; }
 
 h1 {
   font-size: 40px;
