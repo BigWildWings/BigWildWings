@@ -14,7 +14,7 @@
   <link rel="alternate" type="application/rss+xml" title="Big Wild Wings" href="/feed.xml" />
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <script src="/js/master.js?20150820000321"></script>
+  <script src="/js/master.js?20150822195330"></script>
   <script src="/js/jquery.onepage-scroll.min.js"></script>
   <!-- <script src="/js/jquery.parallax.min.js"></script> -->
 </head>
@@ -33,13 +33,34 @@
       <span></span>
       <span></span>
     </div>
+
+    <script>
+    function moveTo(e) {
+      e.preventDefault();
+
+      $(".main").moveTo(event.target.id);
+
+      $('#js-navigation-menu').slideToggle(function(){
+        if($('#js-navigation-menu').is(':hidden')) {
+          $('#js-navigation-menu').removeAttr('style');
+        }
+      });
+
+      // toggles class of hamburger, animating it into an X
+      $('.navigation-menu-button').toggleClass('open');
+
+      // toggles class of li.nav-link, fading them in 
+      $('.nav-link').toggleClass('show'); 
+    }
+    </script>
+
     <nav role="navigation">
       <div class="nav-links-wrapper">
         <ul id="js-navigation-menu" class="navigation-menu show">
-          <li class="nav-link"><a data-index="1" href="#1">Home</a></li>
-          <li class="nav-link"><a data-index="2" href="#2">Video</a></li>
-          <li class="nav-link"><a data-index="3" href="#3">Shows</a></li>
-          <li class="nav-link"><a data-index="3" href="#3">Contact</a></li>
+          <li class="nav-link"><a id="1" onclick="moveTo(event);" href="javascript:void(0)">Home</a></li>
+          <li class="nav-link"><a id="2" onclick="moveTo(event);" href="javascript:void(0)">Video</a></li>
+          <li class="nav-link"><a id="3" onclick="moveTo(event);" href="javascript:void(0)">Shows</a></li>
+          <li class="nav-link"><a id="4" onclick="moveTo(event);" href="javascript:void(0)">Contact</a></li>
           <li class="nav-link"><a href="javascript:void(0)">Press</a></li>
           <li class="nav-link"><a href="javascript:void(0)">Merch</a></li>
         </ul>
@@ -72,9 +93,25 @@
     </video>
     <div class="video-overlay">
       <div class="play-this">
-        <a>
-          <div class="play-button">&nbsp;</div>
-        </a>
+
+        <div class="modal">
+          <label for="modal-1">
+            <div class="modal-trigger play-button">&nbsp;</div>
+          </label>
+          <input class="modal-state" id="modal-1" type="checkbox" />
+          <div class="modal-fade-screen">
+            <div class="modal-inner">
+              <div onclick="document.getElementById('ytplayer').stopVideo()" class="modal-close" for="modal-1"></div>
+              <div class="video-wrapper">
+                <object id="ytplayer">
+                    <param name="movie" value="http://www.youtube.com/v/2a5kclVSfK4?version=3&amp;enablejsapi=1">
+                    <param name="allowScriptAccess" value="always">
+                    <embed id="ytplayer" src="http://www.youtube.com/v/2a5kclVSfK4?version=3&amp;enablejsapi=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always">
+                </object>
+              </div>
+            </div>
+          </div>
+        </div>
         <h1>Someday Dreams</h1>
       </div>
     </div>
@@ -108,7 +145,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>Aug 15, 2015</td>
+	<td>Aug 16, 2015</td>
 	<td>Salt Lake City, UT</td>
 	<td>Urban Lounge</td>
 	<td></td>

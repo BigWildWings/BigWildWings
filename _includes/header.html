@@ -9,13 +9,34 @@
       <span></span>
       <span></span>
     </div>
+
+    <script>
+    function moveTo(e) {
+      e.preventDefault();
+
+      $(".main").moveTo(event.target.id);
+
+      $('#js-navigation-menu').slideToggle(function(){
+        if($('#js-navigation-menu').is(':hidden')) {
+          $('#js-navigation-menu').removeAttr('style');
+        }
+      });
+
+      // toggles class of hamburger, animating it into an X
+      $('.navigation-menu-button').toggleClass('open');
+
+      // toggles class of li.nav-link, fading them in 
+      $('.nav-link').toggleClass('show'); 
+    }
+    </script>
+
     <nav role="navigation">
       <div class="nav-links-wrapper">
         <ul id="js-navigation-menu" class="navigation-menu show">
-          <li class="nav-link"><a data-index="1" href="#1">Home</a></li>
-          <li class="nav-link"><a data-index="2" href="#2">Video</a></li>
-          <li class="nav-link"><a data-index="3" href="#3">Shows</a></li>
-          <li class="nav-link"><a data-index="3" href="#3">Contact</a></li>
+          <li class="nav-link"><a id="1" onclick="moveTo(event);" href="javascript:void(0)">Home</a></li>
+          <li class="nav-link"><a id="2" onclick="moveTo(event);" href="javascript:void(0)">Video</a></li>
+          <li class="nav-link"><a id="3" onclick="moveTo(event);" href="javascript:void(0)">Shows</a></li>
+          <li class="nav-link"><a id="4" onclick="moveTo(event);" href="javascript:void(0)">Contact</a></li>
           <li class="nav-link"><a href="javascript:void(0)">Press</a></li>
           <li class="nav-link"><a href="javascript:void(0)">Merch</a></li>
         </ul>

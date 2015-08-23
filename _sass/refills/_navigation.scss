@@ -39,6 +39,16 @@ header.navigation {
     img {
       max-height: $navigation-height;
       padding: 0.8em 0;
+      max-width:280px;
+      @media screen and (max-width:450px) {
+         max-width:240px;
+      }
+      @media screen and (max-width:350px) {
+         max-width:200px;
+      }
+      @media screen and (max-width:300px) {
+         max-width:140px;
+      }
     }
   }
 
@@ -100,7 +110,7 @@ header.navigation {
   @mixin transitionIn {
     @for $i from 1 through 6 {
       &:nth-child(#{$i}) {
-        transition: all .2s #{$i * .1}s linear;
+        transition: all .2s #{$i * .1}s ease;
       }
     }
   }
@@ -320,7 +330,7 @@ header.navigation {
   width: 37px;
   height: 30px;
   position: relative;
-  margin: 24px 28px 0 0;
+  margin: 16px 28px 0 0;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -330,6 +340,14 @@ header.navigation {
   -o-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
   cursor: pointer;
+
+  @media screen and (max-width:450px) {
+    width: 30px;
+  }
+
+  @media screen and (max-width:350px) {
+    width:24px;
+  }
 }
 
 #js-mobile-menu span {
@@ -349,26 +367,52 @@ header.navigation {
   -moz-transition: .25s ease-in-out;
   -o-transition: .25s ease-in-out;
   transition: .25s ease-in-out;
+  @media screen and (max-width:450px) {
+    height: 4px;
+  }
+
+  @media screen and (max-width:350px) {
+    height: 3px;
+  }
 }
 
 /* Icon 3 */
 
 #js-mobile-menu span:nth-child(1) {
   top: 0px;
+
 }
 
 #js-mobile-menu span:nth-child(2),#js-mobile-menu span:nth-child(3) {
   top: 12px;
+  @media screen and (max-width:450px) {
+    top: 10px;
+  }
+  @media screen and (max-width:350px) {
+    top: 8px;
+  }
 }
 
 #js-mobile-menu span:nth-child(4) {
   top: 24px;
+  @media screen and (max-width:450px) {
+    top:20px;
+  }
+  @media screen and (max-width:350px) {
+    top: 16px;
+  }
 }
 
 #js-mobile-menu.open span:nth-child(1) {
   top: 12px;
   width: 0%;
   left: 50%;
+  @media screen and (max-width:450px) {
+    top:8px;
+  }
+  @media screen and (max-width:350px) {
+    height: 3px;
+  }
 }
 
 #js-mobile-menu.open span:nth-child(2) {

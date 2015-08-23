@@ -24,9 +24,25 @@ layout: default
     </video>
     <div class="video-overlay">
       <div class="play-this">
-        <a>
-          <div class="play-button">&nbsp;</div>
-        </a>
+
+        <div class="modal">
+          <label for="modal-1">
+            <div class="modal-trigger play-button">&nbsp;</div>
+          </label>
+          <input class="modal-state" id="modal-1" type="checkbox" />
+          <div class="modal-fade-screen">
+            <div class="modal-inner">
+              <div onclick="document.getElementById('ytplayer').stopVideo()" class="modal-close" for="modal-1"></div>
+              <div class="video-wrapper">
+                <object id="ytplayer">
+                    <param name="movie" value="http://www.youtube.com/v/2a5kclVSfK4?version=3&amp;enablejsapi=1">
+                    <param name="allowScriptAccess" value="always">
+                    <embed id="ytplayer" src="http://www.youtube.com/v/2a5kclVSfK4?version=3&amp;enablejsapi=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always">
+                </object>
+              </div>
+            </div>
+          </div>
+        </div>
         <h1>Someday Dreams</h1>
       </div>
     </div>
